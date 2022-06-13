@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../inc/libft.h"
 
 int	ft_btoc(char *tab)
 {

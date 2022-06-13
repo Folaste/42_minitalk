@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../inc/libft.h"
 
 unsigned int	ft_btoi(char *tab)
 {

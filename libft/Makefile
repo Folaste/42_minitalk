@@ -6,7 +6,7 @@
 #    By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 13:19:35 by fleblanc          #+#    #+#              #
-#    Updated: 2022/06/10 14:01:31 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/06/13 11:40:52 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ IFLAGS		= -I $(INCDIR)
 
 AR			= ar -rcs
 MKDIR		= mkdir -p
-NORMINETTE	= norminette
+NORMINETTE	= /usr/bin/norminette
 RM			= rm -rf
 
 # **************************************************************************** #
@@ -71,6 +71,7 @@ SRCNAME		= conversions/ft_atoi.c \
 			  predicates/ft_isascii.c \
 			  predicates/ft_isdigit.c \
 			  predicates/ft_isprint.c \
+			  print/ft_print_error.c \
 			  print/ft_putchar_fd.c \
 			  print/ft_putendl_fd.c \
 			  print/ft_putnbr_base_fd.c \
@@ -131,7 +132,6 @@ BASENAME	= `basename $(PWD)`
 
 # **************************************************************************** #
 # Rules
-
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 		@$(MKDIR) $(dir $@)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 void	ft_printf_unsigned_minus(t_printf *tab, unsigned int u, int index)
 {

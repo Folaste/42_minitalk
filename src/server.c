@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include "../inc/minitalk.h"
 
 int	main(int argc, char **argv)
 {
@@ -49,6 +49,6 @@ void	ft_received_signal(int signal)
 		j++;
 		i = 0;
 	}
-	if (result[j] == 0)
+	if (result[j] == '\0')
 		ft_printf("%s", result);
 }

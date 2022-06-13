@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../inc/libft.h"
 
 long long	ft_atoll(const char *nptr)
 {

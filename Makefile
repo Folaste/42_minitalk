@@ -6,7 +6,7 @@
 #    By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:21:28 by fleblanc          #+#    #+#              #
-#    Updated: 2022/06/10 14:01:46 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/06/13 10:07:42 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,7 +139,7 @@ re:		fclean all
 #bonus: fclean $(LFT) $(CLIENT_B) $(SERVER_B)
 
 norm:
-		@$(NORMINETTE) $(NORMFLAG_C) $(SRCDIR) $(LIBDIR)/sources
-		@$(NORMINETTE) $(NORMFLAG_H) $(INCDIR) $(LIBDIR)/includes
+		@$(NORMINETTE) $(NORMFLAG_C) $(SRCDIR) $(LIBDIR)/src
+		@$(NORMINETTE) $(NORMFLAG_H) $(INCDIR) $(LIBDIR)/inc
 
 .PHONY: all clean fclean re norm #bonus

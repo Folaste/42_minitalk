@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 void	ft_printf_hexa_minus(t_printf *tab, unsigned int x,
 								char *base, int index)
