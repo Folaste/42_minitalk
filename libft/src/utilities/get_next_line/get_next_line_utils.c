@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "../../../inc/libft.h"
 
 char	*ft_strjoin_gnl(const char *s1, const char *s2)
 {

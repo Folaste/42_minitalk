@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_count_elements.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:25:35 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/06 16:47:44 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/06/14 11:13:51 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/06/14 11:15:55 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../inc/libft.h"
+#include "../../inc/libft.h"
 
-int	ft_printf_char(t_printf *tab, int i)
+size_t	ft_count_elements(void **tab)
 {
-	int	c;
-	int	index;
+	int	i;
 
-	c = va_arg(tab->args, int);
-	if (tab->minus == 0)
-	{
-		ft_putchar_fd(c, 1);
-		tab->tot_len -= 1;
-	}
-	else
-	{
-		tab->tot_len += tab->width - 3 - ft_intlen(tab->width);
-		index = tab->width - 1;
-		ft_putchar_fd(c, 1);
-		while (index != 0)
-		{
-			ft_putchar_fd(' ', 1);
-			index--;
-		}
-	}
-	i++;
+	i = 0;
+	while (tab[i] != NULL)
+		i++;
 	return (i);
 }

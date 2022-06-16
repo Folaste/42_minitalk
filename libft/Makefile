@@ -6,7 +6,7 @@
 #    By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 13:19:35 by fleblanc          #+#    #+#              #
-#    Updated: 2022/06/13 11:40:52 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/06/16 18:26:34 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,9 @@ SRCNAME		= conversions/ft_atoi.c \
 			  conversions/ft_itob.c \
 			  conversions/ft_tolower.c \
 			  conversions/ft_toupper.c \
+			  counters/ft_count_elements.c \
 			  counters/ft_intlen.c \
+			  free/ft_free_double_tab.c \
 			  lists/ft_lstadd_back.c \
 			  lists/ft_lstadd_front.c \
 			  lists/ft_lstclear.c \
@@ -71,7 +73,8 @@ SRCNAME		= conversions/ft_atoi.c \
 			  predicates/ft_isascii.c \
 			  predicates/ft_isdigit.c \
 			  predicates/ft_isprint.c \
-			  print/ft_print_error.c \
+			  print/ft_print_error_exit.c \
+			  print/ft_print_error_zero.c \
 			  print/ft_putchar_fd.c \
 			  print/ft_putendl_fd.c \
 			  print/ft_putnbr_base_fd.c \
@@ -105,8 +108,7 @@ SRCNAME		= conversions/ft_atoi.c \
 			  utilities/ft_printf/ft_printf_string.c \
 			  utilities/ft_printf/ft_printf_unsigned.c \
 			  utilities/ft_printf/ft_printf_unsigned_utils.c \
-			  utilities/get_next_line/get_next_line.c \
-			  utilities/get_next_line/get_next_line_utils.c
+			  utilities/get_next_line/get_next_line.c 
 
 # **************************************************************************** #
 # Automatic variables for names of sources and objects files

@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_free_double_tab.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:25:35 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/06 16:47:44 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/06/14 10:59:41 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/06/14 11:01:24 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../inc/libft.h"
+#include "../../inc/libft.h"
 
-int	ft_printf_char(t_printf *tab, int i)
+void	ft_free_double_tab(void **tab)
 {
-	int	c;
-	int	index;
+	int	i;
 
-	c = va_arg(tab->args, int);
-	if (tab->minus == 0)
+	i = 0;
+	while (tab[i] != NULL)
 	{
-		ft_putchar_fd(c, 1);
-		tab->tot_len -= 1;
+		free(tab[i]);
+		i++;
 	}
-	else
-	{
-		tab->tot_len += tab->width - 3 - ft_intlen(tab->width);
-		index = tab->width - 1;
-		ft_putchar_fd(c, 1);
-		while (index != 0)
-		{
-			ft_putchar_fd(' ', 1);
-			index--;
-		}
-	}
-	i++;
-	return (i);
+	free(tab);
 }
