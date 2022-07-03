@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:19:49 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/06/09 14:41:05 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/07/03 18:27:35 by fleblanc_        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		pid = ft_atoi(argv[1]);
+		ft_send_length(pid, (int)ft_strlen(argv[2]));
+		usleep(500);
 		ft_send_message(pid, argv[2]);
-		ft_send_message(pid, "\0");
 		exit(EXIT_SUCCESS);
 	}
 	return (0);
@@ -45,6 +46,25 @@ int	ft_check_error(char **argv)
 		i++;
 	}
 	return (1);
+}
+
+void	ft_send_length(int pid, int length)
+{
+	char	*b_length;
+	int		i;
+
+	i = 0;
+	b_length = ft_itob(length);
+	while (b_length[i])
+	{
+		if (b_length[i] == '1')
+			kill(pid, SIGUSR2);
+		else if (b_length[i] == '0')
+			kill(pid, SIGUSR1);
+		i++;
+		usleep(100);
+	}
+	free(b_length);
 }
 
 void	ft_send_message(int pid, char *message)
