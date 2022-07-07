@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:17:40 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/07/03 18:22:11 by fleblanc_        ###   ########.fr       */
+/*   Updated: 2022/07/06 16:50:36 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	ft_send_message(int pid, char *message);
 /*--- server.c ---*/
 void	ft_received_message(int signal);
 int		ft_get_length(int signal);
-char	*ft_get_message(int signal, int length, char *result);
+void	ft_get_message(int signal, int length);
 
 #endif

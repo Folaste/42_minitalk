@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:19:49 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/07/03 18:27:35 by fleblanc_        ###   ########.fr       */
+/*   Updated: 2022/07/06 16:50:34 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,25 @@
 int	main(int argc, char **argv)
 {
 	int	pid;
+	int	k_ret;
 
 	if (argc != 3)
-		ft_printf("Invalid arguments.\nFormat is : ./client [PID] [Message]\n");
+		return (ft_print_error_zero("Invalid arguments.\n"));
 	else
 	{
 		if (ft_check_error(argv) == 0 || ft_atoi(argv[1]) < 1)
-		{
-			ft_printf("Error\nPID is wrong.\n");
-			return (0);
-		}
+			return (ft_print_error_zero("PID is not a number.\n"));
 		pid = ft_atoi(argv[1]);
-		ft_send_length(pid, (int)ft_strlen(argv[2]));
-		usleep(500);
-		ft_send_message(pid, argv[2]);
-		exit(EXIT_SUCCESS);
+		if (argv[2][0] != '\0')
+		{
+			ft_send_length(pid, (int)ft_strlen(argv[2]));
+			k_ret = kill(pid, SIGUSR1);
+			if (k_ret == -1)
+				ft_print_error_exit("PID is wrong.\n");
+			usleep(1);
+			ft_send_message(pid, argv[2]);
+			exit(EXIT_SUCCESS);
+		}
 	}
 	return (0);
 }
@@ -62,7 +66,7 @@ void	ft_send_length(int pid, int length)
 		else if (b_length[i] == '0')
 			kill(pid, SIGUSR1);
 		i++;
-		usleep(100);
+		usleep(1);
 	}
 	free(b_length);
 }
@@ -85,7 +89,7 @@ void	ft_send_message(int pid, char *message)
 			else
 				kill(pid, SIGUSR1);
 			j++;
-			usleep(100);
+			usleep(1);
 		}
 		free(tab);
 		j = 0;
