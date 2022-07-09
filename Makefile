@@ -23,7 +23,6 @@ LIBNAME		= libft.a
 # Compilation
 
 CC		= gcc -ggdb
-IFLAGS	= -I $(INCDIR) -I $(LIBDIR)/$(INCDIR)
 WFLAGS	= -Wall -Wextra -Werror 
 
 # **************************************************************************** #
@@ -89,7 +88,7 @@ WHITE		= "\033[0;37m"
 
 $(OBJDIR)/%.o:	$(SRCDIR)/%.c
 		@$(MKDIR) $(dir $@)
-		@$(CC) $(WFLAGS) $(IFLAGS) -c $< -o $@
+		@$(CC) $(WFLAGS) -c $< -o $@
 		@printf $(CR)"[ $(BASENAME)/%s ]"$(CLEAR) $@
 
 all: $(LFT) $(CLIENT) $(SERVER)
